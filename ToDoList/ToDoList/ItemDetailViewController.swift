@@ -16,12 +16,30 @@ class ItemDetailViewController: UIViewController {
 	@IBOutlet weak var itemDetailLowerLabelOutlet: UILabel!
 	@IBOutlet weak var itemDetailTextViewOutlet: UITextView!
 	
+	var item: Item!
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        itemDetailLowerLabelOutlet.text = item.title
+		
+		  itemDetailTextViewOutlet.text = item.description
     }
+	
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		
+		super.viewWillDisappear(animated)
+		
+		// Vailidation !!!
+		item.title = itemDetailLowerLabelOutlet.text!
+		
+		item.description = itemDetailTextViewOutlet.text!
+	}
+	
+	
+	
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

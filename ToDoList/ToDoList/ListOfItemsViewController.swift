@@ -43,11 +43,9 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let destination = segue.destination as! ListOfItemsViewController
-		
-		let index = itemTableViewOutlet.indexPathForSelectedRow?.row
-		
-		destination.list = toDoLists[index!]
+		let destination = segue.destination as! ItemDetailViewController
+		let index = itemTableViewOutlet.indexPathForSelectedRow!.row
+		destination.item = list.item[index]
 		
 	}
 
@@ -56,7 +54,6 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
