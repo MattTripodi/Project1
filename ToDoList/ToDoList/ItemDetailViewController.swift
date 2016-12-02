@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemDetailViewController: UIViewController {
+class ItemDetailViewController: UIViewController, UITextViewDelegate {
 	
 	// IBOutlets 
 	
@@ -26,7 +26,6 @@ class ItemDetailViewController: UIViewController {
 		
 		  itemDetailTextViewOutlet.text = item.description
     }
-	
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		

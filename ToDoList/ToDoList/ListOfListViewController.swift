@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ListOfListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListOfListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+	
 	
 	// IBOutlets
 	
@@ -63,12 +64,15 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		}
 	}
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		listOflistTextFieldOutlet.delegate = self
     }
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		listOflistTextFieldOutlet.resignFirstResponder()
+		return true
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
