@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QVn-gg-EFJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CBI-3k-lCU">
+            <objects>
+                <navigationController id="QVn-gg-EFJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JXN-px-hnQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5L0-oN-mWt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uyb-Qz-yjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665" y="139"/>
+        </scene>
+        <!--Feedr Reader View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FeedrReaderViewController" customModule="FeedrReaderProject2_MattTripodi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJT-EN-e8E">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="94" id="Zyf-3L-gUL" customClass="NewsArticleTableViewCell" customModule="FeedrReaderProject2_MattTripodi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zyf-3L-gUL" id="fvz-9X-fJM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyD-1P-EC4">
+                                                    <rect key="frame" x="0.0" y="1" width="120" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="PoZ-rm-z1X"/>
+                                                        <constraint firstAttribute="width" constant="120" id="mdt-L3-roa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article Name " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4N-dQ-ZJp">
+                                                    <rect key="frame" x="128" y="15" width="239" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="VLX-V7-fbI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X4N-dQ-ZJp" firstAttribute="centerY" secondItem="fvz-9X-fJM" secondAttribute="centerY" id="AS2-JH-gJe"/>
+                                                <constraint firstItem="oyD-1P-EC4" firstAttribute="centerY" secondItem="fvz-9X-fJM" secondAttribute="centerY" id="K1h-4H-D0t"/>
+                                                <constraint firstItem="oyD-1P-EC4" firstAttribute="leading" secondItem="fvz-9X-fJM" secondAttribute="leading" id="UgC-hr-BB4"/>
+                                                <constraint firstItem="X4N-dQ-ZJp" firstAttribute="leading" secondItem="oyD-1P-EC4" secondAttribute="trailing" constant="8" id="cwD-6B-7Qt"/>
+                                                <constraint firstItem="X4N-dQ-ZJp" firstAttribute="trailing" secondItem="fvz-9X-fJM" secondAttribute="trailingMargin" id="vtx-Fg-qO5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="articleImage" destination="oyD-1P-EC4" id="2wP-6c-Ieh"/>
+                                            <outlet property="articleLabel" destination="X4N-dQ-ZJp" id="bb5-st-kV5"/>
+                                            <segue destination="et4-92-Ude" kind="show" identifier="toArticle" id="OfX-rV-s6c"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="I6w-NR-YEv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kPo-Vc-lJy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mJT-EN-e8E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6jd-AF-RQp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mJT-EN-e8E" secondAttribute="bottom" id="M7W-2j-hvT"/>
+                            <constraint firstItem="mJT-EN-e8E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="V5j-hh-WcQ"/>
+                            <constraint firstAttribute="trailing" secondItem="mJT-EN-e8E" secondAttribute="trailing" id="XUB-ip-erP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k3u-bC-lzb">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="eXN-xM-HjD">
+                            <rect key="frame" x="124" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feedr Reader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-vD-Zn3">
+                                    <rect key="frame" x="6" y="10.5" width="122" height="22.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="feedrReaderTableView" destination="mJT-EN-e8E" id="zAx-Jj-APK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="138.75"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="RXB-aY-qt3">
+            <objects>
+                <viewController id="et4-92-Ude" customClass="ArticleViewController" customModule="FeedrReaderProject2_MattTripodi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HCx-84-gF9"/>
+                        <viewControllerLayoutGuide type="bottom" id="XOR-EU-tIR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h5H-Sg-rbb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8X-rO-CsA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XOR-EU-tIR" firstAttribute="top" secondItem="C8X-rO-CsA" secondAttribute="bottom" id="19e-Qj-4dY"/>
+                            <constraint firstAttribute="trailing" secondItem="C8X-rO-CsA" secondAttribute="trailing" id="Fn3-N9-UMH"/>
+                            <constraint firstItem="C8X-rO-CsA" firstAttribute="leading" secondItem="h5H-Sg-rbb" secondAttribute="leading" id="KAP-pH-bS9"/>
+                            <constraint firstItem="C8X-rO-CsA" firstAttribute="top" secondItem="h5H-Sg-rbb" secondAttribute="top" id="LJE-5r-IIJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dpA-QK-Ov6">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="TAG-PQ-dYe">
+                            <rect key="frame" x="124" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Article" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwT-Lv-G3i">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="articleWebView" destination="C8X-rO-CsA" id="a1I-ek-Ju4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJf-mj-1wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943.125" y="140"/>
+        </scene>
+    </scenes>
+</document>

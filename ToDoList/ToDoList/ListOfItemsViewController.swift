@@ -11,7 +11,6 @@ import UIKit
 class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
 	// IBOutlets
-	
 	@IBOutlet weak var listOfItemsLabelOutlet: UILabel!
 	@IBOutlet weak var listOfItemsTextFieldOutlet: UITextField!
 	@IBOutlet weak var itemTableViewOutlet: UITableView!
@@ -21,11 +20,11 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 	// IBActions 
 	
 	@IBAction func listOfItemsButtonTapped(_ sender: AnyObject) {
-		let newItem = Item(title: listOfItemsTextFieldOutlet.text!, description: "")
+		let newItem = Item(title: listOfItemsTextFieldOutlet.text!, detail: "")
 		listOfItemsTextFieldOutlet.text = nil
 		list.item.append(newItem)
 		itemTableViewOutlet.reloadData()
-
+		persistItemListToDefaults()
 	}
 	
 	let cellID = "myTabelCell"
@@ -69,6 +68,7 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 		if editingStyle == .delete {
 			list.item.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .fade)
+			persistItemListToDefaults()
 		} else if editingStyle == .insert {
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
 		}

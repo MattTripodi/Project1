@@ -24,8 +24,7 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		listOflistTextFieldOutlet.text = nil
 		toDoLists.append(newList)
 		tableViewOutlet.reloadData()
-		
-		
+		persistItemListToDefaults()
 	}
 	
 	let cellID = "myTabelCell"

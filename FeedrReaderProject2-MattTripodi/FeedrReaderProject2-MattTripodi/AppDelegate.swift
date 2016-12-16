@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ToDoList
+//  FeedrReaderProject2-MattTripodi
 //
-//  Created by Matt Tripodi on 11/15/16.
+//  Created by Matt Tripodi on 12/6/16.
 //  Copyright © 2016 Matt Tripodi. All rights reserved.
 //
 
@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		UINavigationBar.appearance().barTintColor = UIColor.black
-		
-		loadPersistedItemListFromDefaults()
-	
 		return true
 	}
 

@@ -24,7 +24,8 @@ class ItemDetailViewController: UIViewController, UITextViewDelegate {
 
         itemDetailLowerLabelOutlet.text = item.title
 		
-		  itemDetailTextViewOutlet.text = item.description
+		  itemDetailTextViewOutlet.text = item.detail
+		
     }
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -34,8 +35,28 @@ class ItemDetailViewController: UIViewController, UITextViewDelegate {
 		// Vailidation !!!
 		item.title = itemDetailLowerLabelOutlet.text!
 		
-		item.description = itemDetailTextViewOutlet.text!
+		item.detail = itemDetailTextViewOutlet.text!
+		
 	}
+	
+	
+	
+	@IBAction func saveButtonTapped(_ sender: Any) {
+		itemDetailTextViewOutlet.delegate = self
+		
+		
+		persistItemListToDefaults()
+	}
+	
+	/*@IBAction func listOfItemsButtonTapped(_ sender: AnyObject) {
+		let newItem = Item(title: listOfItemsTextFieldOutlet.text!, detail: "")
+		listOfItemsTextFieldOutlet.text = nil
+		list.item.append(newItem)
+		itemTableViewOutlet.reloadData()
+		persistItemListToDefaults()
+	}
+*/
+
 	
 	
 	
