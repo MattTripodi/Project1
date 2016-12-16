@@ -43,7 +43,7 @@ class ItemDetailViewController: UIViewController, UITextViewDelegate {
 	
 	@IBAction func saveButtonTapped(_ sender: Any) {
 		itemDetailTextViewOutlet.delegate = self
-		
+		let saveText = itemDetailTextViewOutlet.text
 		
 		persistItemListToDefaults()
 	}
