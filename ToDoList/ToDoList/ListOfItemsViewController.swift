@@ -7,25 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
-	// IBOutlets
+	var list: ItemList!
 	
+	// IBOutlets
 	@IBOutlet weak var listOfItemsLabelOutlet: UILabel!
 	@IBOutlet weak var listOfItemsTextFieldOutlet: UITextField!
 	@IBOutlet weak var itemTableViewOutlet: UITableView!
 	
-	var list: ItemList!
 	
-	// IBActions 
-	
+	// IBActions
 	@IBAction func listOfItemsButtonTapped(_ sender: AnyObject) {
 		let newItem = Item(title: listOfItemsTextFieldOutlet.text!, description: "")
 		listOfItemsTextFieldOutlet.text = nil
 		list.item.append(newItem)
 		itemTableViewOutlet.reloadData()
-
+	}
+	
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		listOfItemsTextFieldOutlet.delegate = self
 	}
 	
 	let cellID = "myTabelCell"
@@ -37,10 +42,10 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ListOfItemsTableViewCell
 		cell.listOfItemsCellLabelOutlet.text = list.item[indexPath.row].title
-
+		
 		return cell
 	}
-
+	
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let destination = segue.destination as! ItemDetailViewController
@@ -48,22 +53,14 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 		destination.item = list.item[index]
 		
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		listOfItemsTextFieldOutlet.delegate = self
-    }
+	
 	
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		listOfItemsTextFieldOutlet.resignFirstResponder()
 		return true
 	}
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
@@ -72,6 +69,6 @@ class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITabl
 		} else if editingStyle == .insert {
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
 		}
-    
-}
+		
+	}
 }

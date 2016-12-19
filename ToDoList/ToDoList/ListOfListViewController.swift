@@ -7,29 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 class ListOfListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
-	
 	// IBOutlets
-	
 	@IBOutlet weak var listOfListLabelOutlet: UILabel!
 	@IBOutlet weak var listOflistTextFieldOutlet: UITextField!
 	@IBOutlet weak var tableViewOutlet: UITableView!
 	
-	// IBActions
-	
+	// IBAction
 	@IBAction func listOfListButtonTapped(_ sender: AnyObject) {
 		let newList = ItemList(title: listOflistTextFieldOutlet.text!)
 		listOflistTextFieldOutlet.text = nil
 		toDoLists.append(newList)
 		tableViewOutlet.reloadData()
-		
-		
 	}
 	
-	let cellID = "myTabelCell"
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		listOflistTextFieldOutlet.delegate = self
+	}
 	
+	
+	let cellID = "myTabelCell"
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return toDoLists.count
@@ -43,8 +44,6 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		return cell
 	}
 	
-	
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let destination = segue.destination as! ListOfItemsViewController
 		
@@ -52,7 +51,6 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		
 		destination.list = toDoLists[index!]
 	}
-	
 	
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -64,19 +62,9 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		}
 	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		listOflistTextFieldOutlet.delegate = self
-    }
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		listOflistTextFieldOutlet.resignFirstResponder()
 		return true
-	}
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	}    
 }

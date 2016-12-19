@@ -7,18 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class ItemDetailViewController: UIViewController, UITextViewDelegate {
 	
-	// IBOutlets 
+	var item: Item!
 	
+	// IBOutlets
 	@IBOutlet weak var itemDetailTopLabelOutlet: UILabel!
 	@IBOutlet weak var itemDetailLowerLabelOutlet: UILabel!
 	@IBOutlet weak var itemDetailTextViewOutlet: UITextView!
 	
-	var item: Item!
-	
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,12 +36,4 @@ class ItemDetailViewController: UIViewController, UITextViewDelegate {
 		item.description = itemDetailTextViewOutlet.text!
 	}
 	
-	
-	
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
