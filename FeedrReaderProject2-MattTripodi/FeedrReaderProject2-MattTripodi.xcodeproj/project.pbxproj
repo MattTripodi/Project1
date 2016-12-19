@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE71B43E1E070D7C00032742 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE71B43D1E070D7C00032742 /* Model.swift */; };
 		EE87D9A81DFA427E00248477 /* NewsArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87D9A71DFA427E00248477 /* NewsArticleTableViewCell.swift */; };
 		EE87D9AA1DFA42A200248477 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87D9A91DFA42A200248477 /* ArticleViewController.swift */; };
 		EEEEF7231DF76C9300FA655D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEEF7221DF76C9300FA655D /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE71B43D1E070D7C00032742 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EE87D9A71DFA427E00248477 /* NewsArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleTableViewCell.swift; sourceTree = "<group>"; };
 		EE87D9A91DFA42A200248477 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		EEEEF71F1DF76C9300FA655D /* FeedrReaderProject2-MattTripodi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FeedrReaderProject2-MattTripodi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE71B43C1E070D6600032742 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE71B43D1E070D7C00032742 /* Model.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		EE87D9AB1DFA42A800248477 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 				EEEEF7221DF76C9300FA655D /* AppDelegate.swift */,
 				EE87D9AB1DFA42A800248477 /* ViewControllers */,
 				EE87D9AC1DFA43B200248477 /* Cell */,
+				EE71B43C1E070D6600032742 /* Model */,
 				EE87D9AD1DFA43C400248477 /* UI */,
 				EEEEF72E1DF76C9300FA655D /* Info.plist */,
 			);
@@ -166,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE71B43E1E070D7C00032742 /* Model.swift in Sources */,
 				EEEEF7251DF76C9300FA655D /* FeedrReaderViewController.swift in Sources */,
 				EE87D9AA1DFA42A200248477 /* ArticleViewController.swift in Sources */,
 				EE87D9A81DFA427E00248477 /* NewsArticleTableViewCell.swift in Sources */,

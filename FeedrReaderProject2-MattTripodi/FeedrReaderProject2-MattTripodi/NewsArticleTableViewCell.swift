@@ -11,7 +11,9 @@ import UIKit
 class NewsArticleTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var articleImage: UIImageView!
-	@IBOutlet weak var articleLabel: UILabel!
+	@IBOutlet weak var titleOutlet: UILabel!
+	@IBOutlet weak var descriptionOutlet: UILabel!
+	@IBOutlet weak var authorOutlet: UILabel!
 	
 	
     override func awakeFromNib() {
