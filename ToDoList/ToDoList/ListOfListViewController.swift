@@ -11,6 +11,9 @@ import Firebase
 
 class ListOfListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
+	var itemList = [List]()
+	
+	
 	// IBOutlets
 	@IBOutlet weak var listOfListLabelOutlet: UILabel!
 	@IBOutlet weak var listOflistTextFieldOutlet: UITextField!
@@ -18,15 +21,20 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 	
 	// IBAction
 	@IBAction func listOfListButtonTapped(_ sender: AnyObject) {
-		let newList = ItemList(title: listOflistTextFieldOutlet.text!)
-		listOflistTextFieldOutlet.text = nil
-		toDoLists.append(newList)
-		tableViewOutlet.reloadData()
+		let listTextField = listOflistTextFieldOutlet.text!
+		listOflistTextFieldOutlet.text = ""
+		createList(title: listTextField)
 	}
 	
+	//ViewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		listOflistTextFieldOutlet.delegate = self
+		listenForLists()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		tableViewOutlet.reloadData()
 	}
 	
 	
@@ -61,10 +69,46 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
 		}
 	}
-
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		listOflistTextFieldOutlet.resignFirstResponder()
 		return true
-	}    
+	}
+	
+	// MARK: - Firebase
+	func didUpdateLists(snapshot: FIRDataSnapshot) {
+		
+		itemList.removeAll()
+		for item in snapshot.children {
+			let list = List(snapshot: item as! FIRDataSnapshot)
+			self.itemList.append(list)
+		}
+		tableViewOutlet.reloadData()
+	}
+	
+	func listenForLists() {
+		let lists = FIRDatabase.database().reference(withPath: "lists")
+		lists.observe(.value, with: didUpdateLists)
+	}
+	
+	func createList(title: String) {
+		
+		let listsRef = FIRDatabase.database().reference(withPath: "lists")
+		let list = List(title: title)
+		let listRef = listsRef.child(title)
+		listRef.setValue(list.toAnyObject())
+	}
+	
+	func deleteList(list: List) {
+		list.ref?.removeValue()
+	}
+	
+	func updateList(newTitle: String, item: [Item], list: List) {
+		if list.title == newTitle {
+			list.ref?.updateChildValues(["items" : [item].self])
+		} else {
+			list.ref?.removeValue()
+			createList(title: newTitle)
+		}
+	}
 }

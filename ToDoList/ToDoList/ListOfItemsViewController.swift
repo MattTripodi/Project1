@@ -11,7 +11,7 @@ import Firebase
 
 class ListOfItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
-	var list: ItemList!
+	var list: List!
 	
 	// IBOutlets
 	@IBOutlet weak var listOfItemsLabelOutlet: UILabel!

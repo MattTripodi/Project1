@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3826684AB05609906A8E8718 /* libPods-ToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B802D6C01FF5D4266C8862EE /* libPods-ToDoList.a */; };
-		EE2F8C761E0861BA00B30EF8 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = EE2F8C751E0861BA00B30EF8 /* GoogleService-Info (1).plist */; };
+		EE2F8C761E0861BA00B30EF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE2F8C751E0861BA00B30EF8 /* GoogleService-Info.plist */; };
 		EE9D1E781DDB64BB001E2BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D1E771DDB64BB001E2BDF /* AppDelegate.swift */; };
 		EE9D1E7D1DDB64BB001E2BDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9D1E7B1DDB64BB001E2BDF /* Main.storyboard */; };
 		EE9D1E7F1DDB64BB001E2BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9D1E7E1DDB64BB001E2BDF /* Assets.xcassets */; };
@@ -25,7 +25,7 @@
 		94F70E209CEC389D69EB177A /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		9D2C47568183197425EFA6A6 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 		B802D6C01FF5D4266C8862EE /* libPods-ToDoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE2F8C751E0861BA00B30EF8 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		EE2F8C751E0861BA00B30EF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE9D1E741DDB64BB001E2BDF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9D1E771DDB64BB001E2BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE9D1E7C1DDB64BB001E2BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 				EE9D1E761DDB64BB001E2BDF /* ToDoList */,
 				EE9D1E751DDB64BB001E2BDF /* Products */,
 				EE9D1E831DDB64BB001E2BDF /* Info.plist */,
-				EE2F8C751E0861BA00B30EF8 /* GoogleService-Info (1).plist */,
+				EE2F8C751E0861BA00B30EF8 /* GoogleService-Info.plist */,
 				A099FC77626FBF8FA5E481FC /* Pods */,
 				F7B384E6E9ED3D19A89AC68B /* Frameworks */,
 			);
@@ -168,7 +168,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Matt Tripodi";
 				TargetAttributes = {
 					EE9D1E731DDB64BB001E2BDF = {
@@ -204,7 +204,7 @@
 				EE9D1E821DDB64BB001E2BDF /* LaunchScreen.storyboard in Resources */,
 				EE9D1E7F1DDB64BB001E2BDF /* Assets.xcassets in Resources */,
 				EE9D1E7D1DDB64BB001E2BDF /* Main.storyboard in Resources */,
-				EE2F8C761E0861BA00B30EF8 /* GoogleService-Info (1).plist in Resources */,
+				EE2F8C761E0861BA00B30EF8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +313,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -362,6 +363,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import Firebase
 
-var toDoLists = [ItemList]()
+var toDoLists = [List]()
 
-class ItemList {
+class List {
 	var title = String()
 	var item = [Item]()
 	var ref: FIRDatabaseReference?
@@ -23,15 +23,19 @@ class ItemList {
 	
 	init(snapshot: FIRDataSnapshot) {
 		title = snapshot.key
-		let snapshotValue = snapshot.value as! [String: AnyObject]
-		item = snapshotValue["item"] as! [Item]
 		ref = snapshot.ref
 	}
 	
 	func toAnyObject() -> Any {
-		return [
-			"title": title
-		]
+		if item.isEmpty {
+			return 0
+		} else {
+			var values = [String : Any]()
+			for list in toDoLists {
+				values[list.title] = list.toAnyObject()
+			}
+			return ["title": values]
+		}
 	}
 }
 
@@ -53,9 +57,7 @@ class Item {
 	}
 	
 	func toAnyObject() -> Any {
-		return [
-			"title": title,
-			"description": description
-		]
+		return description
 	}
 }
+
