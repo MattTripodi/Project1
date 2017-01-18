@@ -17,7 +17,7 @@ class ItemDetailViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet weak var itemDetailTextViewOutlet: UITextView!
 	
 	var item: Item!
-	
+	var model = Model()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ItemDetailViewController: UIViewController, UITextViewDelegate {
 		// Vailidation !!!
 		item.title = itemDetailLowerLabelOutlet.text!
 		
-		item.description = itemDetailTextViewOutlet.text!
+		item.descriptions = itemDetailTextViewOutlet.text!
 	}
 	
 	

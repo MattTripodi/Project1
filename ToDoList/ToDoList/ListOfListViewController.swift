@@ -8,37 +8,42 @@
 
 import UIKit
 
+// Put this in AppDelegate to change navigation bar color 
+// UINavigationBar.appearance().barTintColor = UIColor.black
+
 class ListOfListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
+	var model = Model()
+	var lists = [List]()
+	var selectedListIndex: Int!
 	
 	// IBOutlets
-	
 	@IBOutlet weak var listOfListLabelOutlet: UILabel!
 	@IBOutlet weak var listOflistTextFieldOutlet: UITextField!
 	@IBOutlet weak var tableViewOutlet: UITableView!
 	
 	// IBActions
-	
 	@IBAction func listOfListButtonTapped(_ sender: AnyObject) {
-		let newList = ItemList(title: listOflistTextFieldOutlet.text!)
-		listOflistTextFieldOutlet.text = nil
-		toDoLists.append(newList)
+//		let newList = List(title: listOflistTextFieldOutlet.text!)
+//		listOflistTextFieldOutlet.text = nil
+//		lists.append(newList)
+		let listText = listOflistTextFieldOutlet.text!
+		listOflistTextFieldOutlet.text = ""
+		model.creatList(title: listText)
 		tableViewOutlet.reloadData()
-		
-		
 	}
 	
 	let cellID = "myTabelCell"
 	
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return toDoLists.count
+		return 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ListOfListTableViewCell
 		
-		cell.listOfListCellLabelOutlet.text = toDoLists[indexPath.row].title
+		cell.listOfListCellLabelOutlet.text = lists[indexPath.row].title
 		
 		return cell
 	}
@@ -50,14 +55,14 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		
 		let index = tableViewOutlet.indexPathForSelectedRow?.row
 		
-		destination.list = toDoLists[index!]
+		destination.list = lists[index!]
 	}
 	
 	
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
-			toDoLists.remove(at: indexPath.row)
+			lists.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .fade)
 		} else if editingStyle == .insert {
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
