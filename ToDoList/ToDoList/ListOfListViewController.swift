@@ -52,7 +52,9 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 		destination.list = toDoLists[index!]
 	}
 	
-	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
@@ -62,7 +64,7 @@ class ListOfListViewController: UIViewController, UITableViewDataSource, UITable
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
 		}
 	}
-
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		listOflistTextFieldOutlet.delegate = self
